@@ -1,10 +1,6 @@
 $(document).ready(function() {
 
 
-  
-
-
-
   var addZero = ((c) => { return c.toString().length < 2 ? "0" + c : c })
 
   var getHMS = (() => {
@@ -77,7 +73,6 @@ $(document).ready(function() {
 
     $('#cHex').css('background-color', clr)
 
-// console.log(clr)
 
     for (var i = 0; i < 12; i++) {
   
@@ -105,9 +100,17 @@ $(document).ready(function() {
 
     for (var i = 0; i < 59; i++) {
   
-      var tDiv = '#min' + i
+      var tDivMin = '#min' + i
 
-      $(tDiv).css({
+      var tDivSec = '#sec' + i
+
+      $(tDivMin).css({
+        'background-color': '#000',
+        'border': '0.5px solid #444'
+
+      })
+
+      $(tDivSec).css({
         'background-color': '#000',
         'border': '0.5px solid #444'
 
@@ -128,19 +131,6 @@ $(document).ready(function() {
     }
 
 
-
-    for (var i = 0; i < 59; i++) {
-  
-      var tDiv = '#sec' + i
-
-      $(tDiv).css({
-        'background-color': '#000',
-        'border': '0.5px solid #444'
-
-      })
-
-    }
-
     for (var i = 0; i < (getHMS().sc); i++) {
   
       var tDiv = '#sec' + i
@@ -155,82 +145,18 @@ $(document).ready(function() {
     }
 
 
+    $('#cDigHour').html(getHMS().hr)
 
+    $('#cDigMin').html(getHMS().mn)
 
+    $('#cDigSec').html(getHMS().sc)
 
-      //$("#cDigital").html(getHMS().hr + ":" + getHMS().mn + ":" + getHMS().sc + " " + getHMS().ap)
-      $('#cDigHour').html(getHMS().hr)
+    $('#cDigAmPm').html(getHMS().ap)
 
-      $('#cDigMin').html(getHMS().mn)
-
-      $('#cDigSec').html(getHMS().sc)
-
-      $('#cDigAmPm').html(getHMS().ap)
-
-      $('#cHex').html(clr.toUpperCase())
+    $('#cHex').html(clr.toUpperCase())
     
-
-/*
-      <div id="cDigHour"></div>
-      <div id="cDigMin"></div>
-      <div id="cDigSec"></div>
-      <div id="cDigAmPm"></div>
-  
-*/
-
-}, 1000);
-
-
-
- // console.log("Hit")
-  //!!
-})
-
-
-
-/*
-
-$("#d1 p").fadeOut(500)
-    .delay(600)
-    .queue(function(n) {
-        $(this).html("hahahhaha");
-        n();
-    }).fadeIn(500);​
-
-*/
-
-
-
-
-
-//}
-
-/*
-  setInterval(function() {
-  
-
-    for (var i = 0; i < 10; i++) {
-  
-      var tDiv = '#sec' + i
-
-      $(tDiv).css('background-color', '#CCC')
-
-    }
-
-        // $("#cDigital").html(getHMS().hr + ":" + getHMS().mn + ":" + getHMS().sc + " " + getHMS().ap)
-
-    // var clr = '#' + (getHMS().hr).toString(16) + (getHMS().mn).toString(16) + (getHMS().sc).toString(16)
-
-    // 
-  
   }, 1000);
 
 
- */
-
-
-
-
-
-
+})
 
