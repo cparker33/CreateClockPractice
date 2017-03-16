@@ -69,7 +69,9 @@ $(document).ready(function() {
   setInterval(function() {
   
 
-    var clr = '#' + (getHMS().mt).toString(16) + (getHMS().mn).toString(16) + (getHMS().sc).toString(16)
+    var clr = '#' + addZero((getHMS().mt).toString(16)) + addZero((getHMS().mn).toString(16)) + addZero((getHMS().sc).toString(16))
+
+
 
     $('#cHex').css('background-color', clr)
 
